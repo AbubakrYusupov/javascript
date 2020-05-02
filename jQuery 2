@@ -1,0 +1,32 @@
+
+// Урок 2
+$(document).ready(function() {
+
+   // СОБЫТИЯ
+   // Клики мышью (click digani clicknut digani 1 marta mishka bosiladi, dblclickda 2 marta mishkani bosamiz)
+    /*$('h2').dblclick(function(){
+    	$(this).toggleClass('red')
+    });*/
+
+   // Полеты над злементом :) (mouseenterda mishkani tegga oborse effekt boladi misol ucun 
+   // tegga mishkani oborse rangi qizil boladi, bowqatan yana oborse ozini rangiga qaytadi
+   //, mouseleave и т.д.)
+    /*$('h2').mouseenter(function(){
+    	$(this).toggleClass('red')
+    });
+     $('h2').mouseleave(function(){
+    	$(this).toggleClass('red')
+    });*/
+
+   // Формы (focusda inputga bosa alertdan soz chiqadi hudda clickga oxwap lekin u clickdaka enterni bosa yo bomidi,
+   // changeda inputga soz yozsa userName kodida ciqadi  и т.д.)
+   /*$('input').change(function(){
+   	$('#userName').text(', ' + $(this).val());
+   });*/
+
+   // Клавиатура (keypressda inputga yozse userNamega oxiridi xarf soxranit bomidi, keydown, 
+   //keyupda inputga yozse userNamega toliq soxranit boladi)
+   /*$('input').keypress(function(){
+   	$('#userName').text(', ' + $(this).val());
+   });*/
+}); 
