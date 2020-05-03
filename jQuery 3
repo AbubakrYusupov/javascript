@@ -1,0 +1,40 @@
+// Урок 3 
+
+$(document).ready(function() {
+  // Базовая Анимация
+  //$('.box:first').delay da box turishi().hide da box yoqoladi().show da box qaytadi();bula hammasi sekundda belgilanadi
+  //$('.container:first').slideUpda(1000)da con 1 yoqoldi;.slideDownda(1000)da con 1 qaytdi;animate animatsiya({})
+
+  // Взаимодействие с Атрибутами
+  //alert($('img').attr('src'));
+  //$('img').click(function(){
+  	//$(this).fadeOut(500, function(){//img 1-rasmmi fadeOut orqali 0.5 sekuntda  clickda 1 barta bosip yoqqildim
+  		//$(this).attr('src', 'img2.jpg').fadeIn(500);//img 2-rasmmi fadeIn orqali 0.5 sekuntda qoydim
+  	//})
+  //})
+  // $('p.lead').attr('data-target', 'text') brauzerda uwa p.lead textida posmotr kod qisa data-target ciqadi
+
+  // Взаимодействия с классами
+/* $('.lead').click(function(){clickda p.leadga bose rangi kok boladi
+  $('p.lead').addClass('blue')
+});*/
+   /*$('.lead').click(function(){
+   	 $(this).toggleClass('lead blue')toggleClassda lead texti kichkinalashadi va rangi kok boladi
+   });*/
+  // Клонирование, добавление, перемещение	элементов
+  $('.lead').click(function(){
+    // $(this).text();bu textda lead texti yo bolip orniga text(ichiga yozgan sozimiz chiqadi) bizani sopstveniy textimiz
+    // $(this).html('Свой собственный <em>текст</em>'); htmlda teg ishlatsa boladi 
+    // $(this).append('Дополнительный текст'); appendda lead texti ochip ketmidi oxiriga yozgan sozimiz qoshiladi
+    // $(this).prepend('Начальный текст'); prependda yozgan sozimiz bowiga qowiladi
+    // $(this).after('<p>Новый текст</p>');afterda yangi text paydo boladi lead texti tegida turadi
+    // $(this).wrap('<div class="container"></div>'); wrapda brauzerga otse posmot kodda container paydo bolad
+    // $(this).unwrap('<div class="wrap"></div>');brauzerdigi posmotr koddi leadga bossa div yo boladi
+    // $(this).empty(); emptyda lead textiga bosse yobopqoladi lekin posmotr kodda qoladi lead kodi
+    // $(this).remove();removeda lead textiga bosse yobopqoladi posmotr koddayam yobopqoladi xullas xic qatta qomid
+    /* $(this).append('<br />'+$(this).text());brkoddida lead textiga bose uwa lead textidan yana 1 paydoboladi beskonecni
+     kopaypketvuradi*/
+
+  })
+
+});   
