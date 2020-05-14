@@ -1,0 +1,47 @@
+let gulp = require('gulp'),// requireni ichiga package.jsonga kegan narsa yoziladi misol uchun package.jsonga gulp keldi
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
+    rename = require('gulp-rename');
+
+gulp.task('scss', function(){
+	return gulp.src('app/scss/**/*.scss')// scss faylni ovomiz; /*.sass dip yozse sass popkadi hamma fayllani belgilidi
+	// agarda /**/*.sass dip yozse sass popkadi sass fayllani hammasini belgilidi
+	.pipe(sass({outputStyle: 'compresed'}))//nimadur qivomiz 
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('app/css'))// kegin css papka ocilvoti
+	.pipe(browserSync.reload({stream: true}))
+});
+gulp.task('html', function(){
+	return gulp.src('app/*.html')
+	.pipe(browserSync.reload({stream: true}))
+});
+gulp.task('script', function(){
+	return gulp.src('app/js/*.js')
+	.pipe(browserSync.reload({stream: true}))
+});
+gulp.task('js', function(){
+  return gulp.src([
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.js'
+  ]) 
+	.pipe(concat('libs.min.js'))
+	.pipe(uglify())
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({stream: true}))
+});
+gulp.task('browser-sync', function(){//browser-syncda brauzerda avtomaticheskiy ochiladi
+	browserSync.init({
+		server: {
+			baseDir: "app/"
+		}
+	});
+});
+gulp.task('watch', function(){
+	gulp.watch('app/scss/**/*scss', gulp.parallel('scss'))//watch kodi orqali okno komandga watch dip yozse ubu kodi 
+	//kegin ozgartirse avtomaticheskiy ozgaradi okno komandsiz soxranit qise boldi
+    gulp.watch('app/*.html', gulp.parallel('html'))
+    gulp.watch('app/js/*.js', gulp.parallel('script'))
+});
+gulp.task('default', gulp.parallel('scss', 'js', 'browser-sync', 'watch'))
